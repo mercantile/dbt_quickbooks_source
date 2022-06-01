@@ -38,7 +38,7 @@ final as (
         cast(receivable_account_id as {{ dbt_utils.type_string() }}) as receivable_account_id,
         cast(deposit_to_account_id as {{ dbt_utils.type_string() }}) as deposit_to_account_id,
         exchange_rate,
-        transaction_date,
+        date(transaction_date) as transaction_date,
         cast(customer_id as {{ dbt_utils.type_string() }}) as customer_id,
         _fivetran_deleted
     from fields
