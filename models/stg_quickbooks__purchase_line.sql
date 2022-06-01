@@ -31,6 +31,7 @@ final as (
         cast(purchase_id as {{ dbt_utils.type_string() }}) as purchase_id,
         index,
         cast(account_expense_account_id as {{ dbt_utils.type_string() }}) as account_expense_account_id,
+        -- This is a deviation from the original fivetran file for the purposes of our data
         cast(account_expense_class_id as STRING) as account_expense_class_id,
         account_expense_billable_status,
         cast(account_expense_customer_id as {{ dbt_utils.type_string() }}) as account_expense_customer_id,
